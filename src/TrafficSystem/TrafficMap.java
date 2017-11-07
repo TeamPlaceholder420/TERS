@@ -1,23 +1,14 @@
 package TrafficSystem;
 
 public class TrafficMap {
-	private PathSection[] roadSections;
-	private PathNode[] pathNodes;
-}
-
-
-class Road {
+	private Intersection[] roadIntersections;
+	private Road[] roads;
+	
+	public TrafficMap() {
+		CRS crs = new CRS();
+		
+		
+	}
 	
 }
 
-class PathSection {
-	private int id;
-	
-	
-	
-}
-
-class PathNode {
-	private int id;
-	
-}
