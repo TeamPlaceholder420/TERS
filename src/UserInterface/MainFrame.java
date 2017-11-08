@@ -16,7 +16,7 @@ public class MainFrame {
 		frame.setSize(800, 600);
 		frame.setVisible(true);
 		
-		frame.add(new RoadMapComponent());
+		frame.add(new TrafficSystemRenderer());
 		
 	}
 	

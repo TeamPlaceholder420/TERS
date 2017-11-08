@@ -3,7 +3,7 @@ package UserInterface;
 import java.awt.*;
 import javax.swing.*;
 
-public class RoadMapComponent extends JComponent {
+public class TrafficSystemRenderer extends JComponent {
 	
 	@Override
 	public void paint(Graphics g) {
