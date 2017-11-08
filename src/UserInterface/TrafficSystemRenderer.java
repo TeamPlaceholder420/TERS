@@ -12,6 +12,8 @@ public class TrafficSystemRenderer extends JComponent {
 		int w = getWidth();
 		int h = getHeight();
 		
-		g2.drawLine(0, 0, w, h);
+
+		
+		g2.drawString("Indevelopment", 10, 10);
 	}
 }

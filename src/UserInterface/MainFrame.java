@@ -17,7 +17,7 @@ public class MainFrame {
 		frame.setVisible(true);
 		
 		frame.add(new TrafficSystemRenderer());
-		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	public static void main(String[] args) {

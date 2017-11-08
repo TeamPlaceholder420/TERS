@@ -5,6 +5,7 @@ public class Road {
 	private Intersection p1, p2;
 	
 	private boolean oneway;
+	private boolean uturnAllowed;
 	private int lanes;
 	
 	

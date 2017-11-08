@@ -1,0 +1,5 @@
+<map name="testMap">
+	<intersection x="100" y="100" id="1"></intersection>
+	<intersection x="200" y="100" id="2"></intersection>
+	<road from="1" to="2" length="100" ></road>
+</map>
