@@ -1,7 +1,6 @@
 package TrafficSystem;
 
-import java.io.*;
-import java.util.*;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

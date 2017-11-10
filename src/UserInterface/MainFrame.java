@@ -1,6 +1,7 @@
 package UserInterface;
 
 import javax.swing.*;
+import org.openstreetmap.gui.jmapviewer.JMapViewer;
 
 import TrafficSystem.TrafficMap;
 
@@ -16,7 +17,7 @@ public class MainFrame {
 		frame.setSize(800, 600);
 		frame.setVisible(true);
 		
-		frame.add(new TrafficSystemRenderer());
+		frame.add(new JMapViewer());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
