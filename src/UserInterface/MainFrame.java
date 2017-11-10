@@ -9,6 +9,7 @@ public class MainFrame {
 	
 	private JFrame frame;
 	private JPanel mainPanel;
+	private JMapViewer mapView;
 	
 	private TrafficMap trafficMap;
 	
@@ -17,8 +18,12 @@ public class MainFrame {
 		frame.setSize(800, 600);
 		frame.setVisible(true);
 		
-		frame.add(new JMapViewer());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		mapView = new JMapViewer();
+		frame.add(mapView);
+		frame.pack();
 	}
 	
 	public static void main(String[] args) {
