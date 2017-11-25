@@ -10,8 +10,11 @@ import org.xml.sax.helpers.DefaultHandler;
 
 class CRS {
 	
+	File file;
+	
 	public CRS() {
-		
+		file = new File("demo.map");
+
 	}
 	
 	public boolean isConnected() {
@@ -32,5 +35,9 @@ class CRS {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public File getMapFile() {
+		return file;
 	}
 }

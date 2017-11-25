@@ -1,19 +1,27 @@
 package TrafficSystem;
 
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import org.openstreetmap.gui.jmapviewer.JMapViewer;
+import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class TrafficMap {
+import TrafficSystem.Markers.TNode;
+
+public class TrafficMap extends JMapViewer {
 	private Intersection[] roadIntersections;
 	private Road[] roads;
+	CRS crs;
 	
 	public TrafficMap() {
 		
 		System.out.println("Connecting to CRS...");
-		CRS crs = new CRS();
+		 crs = new CRS();
 		
 		System.out.println("Requesting map XML file...");
 		Document mapXML = crs.getRoadsXML();
@@ -32,8 +40,20 @@ public class TrafficMap {
 			roadIntersections[i] = new Intersection(id, x, y);
 			
 			System.out.println("Loaded new intersection. ID: " + id + " X: "  + x + " Y: " + y);
+			
 		}
 		
+		
+		setDisplayPosition(new MPoint(25.31454590744707, 55.4124641418457), 13);
+		
+		TrafficMapEditor editor = new TrafficMapEditor(this);
+		
+		addMouseListener(editor);
+		
+	}
+	
+	CRS getCRSInstance() {
+		return crs;
 	}
 	
 }
