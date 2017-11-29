@@ -20,6 +20,7 @@ public class MainFrame {
 	private JPanel mainPanel;
 	
 	private TrafficMap trafficMap;
+	private TrafficMapEditor editor;
 	
 	public MainFrame(TrafficMap tm) {
 		trafficMap = tm;
@@ -30,39 +31,11 @@ public class MainFrame {
 		frame.setVisible(true);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.addKeyListener(new KeyListener() {
-			
-			@Override
-			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void keyPressed(KeyEvent e) {
-				
-				if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-					System.out.println(trafficMap.getPosition());
-					System.out.println(trafficMap.getZoom());
-				}
-				
-				else if(e.getKeyCode() == KeyEvent.VK_F1) {
-					System.out.println(trafficMap.getPosition());
-					System.out.println(trafficMap.getZoom());
-				}
-			}
-		});
-		
-		
 		
 		frame.add(trafficMap);
 		frame.pack();
+		
+		editor = new TrafficMapEditor(frame, trafficMap);
 	}
 	
 	public static void main(String[] args) {

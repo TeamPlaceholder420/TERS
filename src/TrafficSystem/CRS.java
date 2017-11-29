@@ -8,12 +8,12 @@ import javax.xml.parsers.*;
 import org.w3c.dom.Document;
 import org.xml.sax.helpers.DefaultHandler;
 
-class CRS {
+public class CRS {
 	
-	File file;
+	//File file;
 	
 	public CRS() {
-		file = new File("demo.map");
+		//file = new File("demo.txt");
 
 	}
 	
@@ -38,6 +38,6 @@ class CRS {
 	}
 	
 	public File getMapFile() {
-		return file;
+		return null;
 	}
 }

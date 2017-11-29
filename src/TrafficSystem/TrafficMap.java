@@ -46,14 +46,18 @@ public class TrafficMap extends JMapViewer {
 		
 		setDisplayPosition(new MPoint(25.31454590744707, 55.4124641418457), 13);
 		
-		TrafficMapEditor editor = new TrafficMapEditor(this);
-		
-		addMouseListener(editor);
-		
 	}
 	
-	CRS getCRSInstance() {
+	public CRS getCRSInstance() {
 		return crs;
+	}
+	
+	public Path getPath(MPoint from, MPoint to) {
+		return new Path();
+	}
+	
+	public Road getNearestRoad(MPoint to) {
+		return roads[0];
 	}
 	
 }
