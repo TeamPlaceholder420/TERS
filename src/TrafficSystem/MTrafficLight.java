@@ -1,13 +1,19 @@
 package TrafficSystem;
 
-class TrafficLightIntsc extends Intersection{
-	public TrafficLightIntsc(int id, double x, double y) {
+import java.awt.Color;
+
+public class MTrafficLight extends MNode{
+	public MTrafficLight(int id, double x, double y) {
 		super(id, x, y);
 		// TODO Auto-generated constructor stub
 	}
 
 	//Traffic light corresponding to each inRoad
 	private TrafficLight[] trafficLights;
+	
+	public Color getColor() {
+		return Color.RED;
+	}
 }
 
 class TrafficLight {

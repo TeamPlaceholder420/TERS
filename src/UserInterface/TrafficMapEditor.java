@@ -31,8 +31,8 @@ import javax.swing.KeyStroke;
 import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
 
 import TrafficSystem.TrafficMap;
-import TrafficSystem.Markers.TNode;
-import TrafficSystem.Markers.TRelation;
+import UserInterface.Markers.TNode;
+import UserInterface.Markers.TRelation;
 
 class TrafficMapEditor implements MouseListener, KeyListener {
 	
@@ -42,6 +42,7 @@ class TrafficMapEditor implements MouseListener, KeyListener {
 	
 	ArrayList<TNode> nodes = new ArrayList<>();
 	ArrayList<TRelation> relations = new ArrayList<>();
+	ArrayList<Integer> trafficlights = new ArrayList<>();
 	
 	TNode selectedNode = null;
 	
@@ -81,9 +82,11 @@ class TrafficMapEditor implements MouseListener, KeyListener {
 	public void mousePressed(MouseEvent e) {
 		int x = e.getX();
 		int y = e.getY();
+		ICoordinate m =  map.getPosition(x, y);
 		
+		System.out.println(m.getLat() + ", " + m.getLon());
 		if(e.isAltDown()) {
-			ICoordinate m =  map.getPosition(x, y);
+			//ICoordinate m =  map.getPosition(x, y);
 			
 			TNode n = new TNode(m.getLat(), m.getLon(), nodes.size());
 			map.addMapMarker(n);
@@ -99,7 +102,7 @@ class TrafficMapEditor implements MouseListener, KeyListener {
 						n.setColor(Color.red);
 						map.repaint();
 					} else {
-						ICoordinate m =  map.getPosition(x, y);
+						//ICoordinate m =  map.getPosition(x, y);
 						
 						TRelation r = new TRelation(map, selectedNode, n);
 						relations.add(r);
@@ -136,10 +139,17 @@ class TrafficMapEditor implements MouseListener, KeyListener {
 				out.println(n.getLat() + " " + n.getLon());
 			}
 			
+			out.println(trafficlights.size());
+			for(Integer i : trafficlights) {
+				out.println(i.intValue());
+			}
+			
 			out.println(relations.size());
 			for(TRelation r : relations) {
 				out.println(r.from.index + " " + r.to.index);
 			}
+			
+			
 			
 			out.flush();
 			out.close();
@@ -171,6 +181,13 @@ class TrafficMapEditor implements MouseListener, KeyListener {
 				map.addMapMarker(n);
 			}
 			
+			int tNum = in.nextInt();
+			for(int i = 0; i < tNum; i++) {
+				int from = in.nextInt();
+				
+				trafficlights.add(from);
+			}
+			
 			int rNum = in.nextInt();
 			for(int i = 0; i < rNum; i++) {
 				int from = in.nextInt();
@@ -200,6 +217,16 @@ class TrafficMapEditor implements MouseListener, KeyListener {
 				System.out.println("loading...");
 				load();
 				break;
+			case KeyEvent.VK_T:
+				if(selectedNode!= null) {
+					
+					trafficlights.add(new Integer(selectedNode.index));
+					
+					selectedNode.setColor(Color.YELLOW);
+					selectedNode = null;
+				}
+				break;
+			
 		}
 		 
 	}

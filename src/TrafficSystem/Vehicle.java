@@ -1,5 +1,4 @@
 package TrafficSystem;
 
-public class Path {
-
+public class Vehicle {
 }

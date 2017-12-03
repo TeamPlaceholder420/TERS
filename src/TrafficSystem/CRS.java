@@ -22,14 +22,11 @@ public class CRS {
 		
 	}
 
-	public Document getRoadsXML() {
+	public File getMapFile() {
 		
 		try {
-		File file = new File("map.xml"); 
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(file);
-		return doc;
+		File file = new File("demo.map"); 
+		return file;
 		
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -37,7 +34,4 @@ public class CRS {
 		return null;
 	}
 	
-	public File getMapFile() {
-		return null;
-	}
 }
