@@ -23,7 +23,7 @@ public class Road {
 	public double getCost() {
 		double maxCars = (length/avgCarLength);
 		
-		return maxCars;
+		return maxCars + carCount/maxCars;
 	};
 	
 	

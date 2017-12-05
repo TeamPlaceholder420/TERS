@@ -40,7 +40,7 @@ public class MainFrame {
 		pathRenderer = new RouteRenderer(tm);
 		
 		MPoint p1 = new MPoint(25.308746012313282, 55.417935848236084);
-		MPoint p2 = new MPoint(25.308105873094362, 55.39040565490723);
+		MPoint p2 = new MPoint(25.308125271302195, 55.389697551727295);
 		Route p = tm.getRoute(p1, p2);
 		pathRenderer.drawPath(p, p1, p2);
 		editor = new TrafficMapEditor(frame, trafficMap);

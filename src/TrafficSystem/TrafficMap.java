@@ -1,36 +1,29 @@
 package TrafficSystem;
 
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
-import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import Util.Logger;
 
-import UserInterface.Markers.TNode;
-import UserInterface.Markers.TRelation;
 
 public class TrafficMap extends JMapViewer {
 	private MNode[] nodes;
 	private Road[] roads;
-	CRS crs;
+	private CRS crs;
 	
 	private IPathFinder pathFinder = new LSPathFinder();
-	
+
 	public TrafficMap() {
-		
-		System.out.println("Connecting to CRS...");
+		Logger.log(null, "Connecting to CRS...");
 		 crs = new CRS();
 		
-		System.out.println("Requesting map XML file...");
+		Logger.log(null, "Requesting map file...");
 		File mapFile = crs.getMapFile();
 		try {
 		Scanner in;
@@ -78,7 +71,7 @@ public class TrafficMap extends JMapViewer {
 		}
 		
 		setDisplayPosition(new MPoint(25.31454590744707, 55.4124641418457), 13);
-		
+		Logger.log(Color.BLUE, "Map loading complete.");
 	}
 	
 	public CRS getCRSInstance() {

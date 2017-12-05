@@ -36,8 +36,7 @@ public class MPoint implements ICoordinate {
 	}
 	
 	public double getDistance(MPoint to) {
-		int EarthRadius = 6371; // Radius of the earth
-		
+		int EarthRadius = 6371;
 	    double latd = Math.toRadians(to.lat - lat);
 	    double lond = Math.toRadians(to.lon - lon);
 	    double a = Math.sin(latd / 2) * Math.sin(latd / 2)

@@ -43,4 +43,15 @@ public class Route {
 	public ArrayList<MNode> getNodes() {
 		return nodes;
 	}
+	
+	public void toNext() {
+		nodes.remove(0);
+	}
+
+	public MPoint getFirst() {
+		// TODO Auto-generated method stub
+		if(nodes.isEmpty())
+			return null;
+		return nodes.get(0);
+	}
 }

@@ -2,6 +2,8 @@ package EmergencyResponse;
 
 import java.util.Date;
 
+import TrafficSystem.MPoint;
+
 public class ERequest {
 	
 	Date date;
