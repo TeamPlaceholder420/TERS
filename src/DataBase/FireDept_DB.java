@@ -1,6 +1,8 @@
 package DataBase;
 
 public class FireDept_DB implements DB{
+	
+	OracleJDBCConnection con;
 
 	@Override
 	public void register(double x, double y) {

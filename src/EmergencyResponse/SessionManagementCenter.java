@@ -40,14 +40,14 @@ public class SessionManagementCenter {
 		new Thread(R2, "SMC").start();
 	}
 
-	void insert_session(Session s){
+	public void insert_session(Session s){
 		l.add(s);
 		session_NOT_served_counter++;
 		Collections.sort(l, c);
 		
 	}
 	
-	void remove_session(Session s){
+	public void remove_session(Session s){
 		l.remove(s);
 		
 		Resource r = ht.get(s);
@@ -69,7 +69,7 @@ public class SessionManagementCenter {
 		
 	}
 	
-	synchronized void serve(Session s){
+	public synchronized void serve(Session s){
 		Type t = s.getEr().getE().getType();
 		int inv = s.getEr().getE().getNo_of_involved();
 		

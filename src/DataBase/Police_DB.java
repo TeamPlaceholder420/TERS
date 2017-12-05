@@ -7,6 +7,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Police_DB implements DB {
+	
+	OracleJDBCConnection con;
 
 	@Override
 	public void register(double x, double y) {

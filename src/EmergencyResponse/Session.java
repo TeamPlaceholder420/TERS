@@ -2,9 +2,11 @@ package EmergencyResponse;
 
 import java.util.ArrayList;
 //import java.util.Vector;
+import java.util.Date;
 
 public class Session {
 	
+	Date session_initial_date;
 	static int TOTAL_NO_SESSIONS = 0;
 	int session_ID;
 	ERequest er;
@@ -20,6 +22,7 @@ public class Session {
 	
 	public Session(ERequest er) {
 		super();
+		session_initial_date = new Date();
 		this.er = er;
 		session_ID = TOTAL_NO_SESSIONS++;
 		session_priority = (int)er.priority;
@@ -66,6 +69,13 @@ public class Session {
 		this.servicesArray = servicesArray;
 	}
 	
+	public int ReCalcPriority(){
+		
+		//using a new date to calculate the instantaneous delay
+		session_priority += (new Date().getTime() - session_initial_date.getTime()); //how increase the priority depending on the wait time
+		
+		return session_priority;
+	}
 	
 
 }
