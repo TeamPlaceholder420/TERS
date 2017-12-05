@@ -28,18 +28,25 @@ public class Demo {
 		TrafficMap m = new TrafficMap();
 		RouteRenderer rr = new RouteRenderer(m);
 		Random rand = new Random();
+		Main frame = new Main(m);
+		
+		java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+            	
+                //frame = new Main(m);
+                frame.setVisible(false);
+            }
+        });
+		
+		Login login = new Login(frame);
 		 java.awt.EventQueue.invokeLater(new Runnable() {
 	            public void run() {
-	                new Login().setVisible(true);
+	                //login = new Login(frame);
+	                login.setVisible(true);
 	            }
 	        });
 		 
-		 java.awt.EventQueue.invokeLater(new Runnable() {
-	            public void run() {
-	            	
-	                new Main(m).setVisible(true);
-	            }
-	        });
+		 
 		 
 		MPoint p1 = new MPoint(25.308746012313282, 55.417935848236084);
 		//Route p = m.getRoute(p1, p2);

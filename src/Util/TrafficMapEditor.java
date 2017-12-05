@@ -1,4 +1,4 @@
-package UserInterface;
+package Util;
 
 import java.awt.Color;
 import java.awt.RenderingHints.Key;

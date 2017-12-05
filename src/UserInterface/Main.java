@@ -17,6 +17,7 @@ import TrafficSystem.MPoint;
 import TrafficSystem.Route;
 import TrafficSystem.TrafficMap;
 import Util.Logger;
+
 import java.awt.event.ItemEvent;
 
 /**
@@ -26,7 +27,6 @@ import java.awt.event.ItemEvent;
 public class Main extends javax.swing.JFrame {
 	
 	private RouteRenderer pathRenderer;
-	private TrafficMapEditor editor;
 	
     /**
      * Creates new form Main

@@ -22,7 +22,7 @@ public class MainFrame {
 	
 	private TrafficMap trafficMap;
 	private RouteRenderer pathRenderer;
-	private TrafficMapEditor editor;
+	//private TrafficMapEditor editor;
 	
 	public MainFrame(TrafficMap tm) {
 		trafficMap = tm;
@@ -43,7 +43,7 @@ public class MainFrame {
 		MPoint p2 = new MPoint(25.308125271302195, 55.389697551727295);
 		Route p = tm.getRoute(p1, p2);
 		pathRenderer.drawPath(p, p1, p2);
-		editor = new TrafficMapEditor(frame, trafficMap);
+		//editor = new TrafficMapEditor(frame, trafficMap);
 		
 		frame.repaint();
 	}
