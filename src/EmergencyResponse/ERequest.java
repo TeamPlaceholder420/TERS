@@ -2,8 +2,6 @@ package EmergencyResponse;
 
 import java.util.Date;
 
-import TrafficSystem.MPoint;
-
 public class ERequest {
 	
 	Date date;
@@ -52,15 +50,6 @@ public class ERequest {
 		//using a new date to calculate the instantaneous delay
 		priority = (new Date().getTime() - e.date.getTime()); //how late is the response made
 		priority += (e.type.ordinal() + 1) * e.no_of_involved;
-		
-		return priority;
-	}
-	
-	public long ReCalcPriority(){
-		
-		//using a new date to calculate the instantaneous delay
-		priority = (new Date().getTime() - e.date.getTime()); //how late is the response made
-		priority += e.type.ordinal() * e.no_of_involved;
 		
 		return priority;
 	}
